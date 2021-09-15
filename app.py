@@ -50,7 +50,6 @@ def process():
     return response
 
 if __name__ =='__main__':
-    if False:main()
-    app.run(port=8080)
+    app.run(host='0.0.0.0', port=5000)
 
     

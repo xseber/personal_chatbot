@@ -32,7 +32,7 @@ def main():
     tokens_list_j = [','.join(tkn) for tkn in d]
     tfigf.fit(tokens_list_j)
     #corpus = tfigf.transform(tokens_list_j).toarray()
-    jl.dump(tfigf, 'static/model/vectorizer'+'.joblib')
+    jl.dump(tfigf, 'static/vectorizer'+'.joblib')
     
 if __name__ =='__main__':
     main()
