@@ -28,8 +28,15 @@ def main():
     
 app = f.Flask(__name__, static_url_path='/static')
 source = pd.read_csv('static/data.csv')
+d = []
+for i in range(len(source)):
+    a =  source['retrieval'].iloc[i]
+    d.append(pythainlp.word_tokenize(a))
+    
+model = TfidfVectorizer(analyzer= sp)
+tokens_list_j = [','.join(tkn) for tkn in d]
+model.fit(tokens_list_j)
 
-model = jl.load('static/vectorizer.joblib')
 corpus = jl.load('static/corpus.joblib')
 
 @app.route('/', methods=['GET','POST'])
